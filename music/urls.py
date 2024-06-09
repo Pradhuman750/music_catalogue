@@ -14,7 +14,6 @@ from .views import (
     playlist_update,
 )
 
-# from .views import playlist_list, playlist_detail
 router = DefaultRouter()
 router.register(r"artists", ArtistViewSet)
 router.register(r"albums", AlbumViewSet)
