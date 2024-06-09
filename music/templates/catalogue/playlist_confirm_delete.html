@@ -1,0 +1,12 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Delete Playlist{% endblock %}
+
+{% block content %}
+  <h1>Are you sure you want to delete "{{ playlist.name }}"?</h1>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'playlist_list' %}">Cancel</a>
+  </form>
+{% endblock %}

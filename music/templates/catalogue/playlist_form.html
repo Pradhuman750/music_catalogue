@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}Playlist{% endblock %}
+
+{% block content %}
+  <h1>Create/Edit Playlist</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ formset.management_form }}
+    <table>
+      {{ formset.as_table }}
+    </table>
+    <button type="submit">Save</button>
+  </form>
+  <a href="{% url 'playlist_list' %}">Back to Playlist List</a>
+{% endblock %}
